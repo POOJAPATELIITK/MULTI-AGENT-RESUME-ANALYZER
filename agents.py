@@ -18,7 +18,7 @@ search_tool = SerperDevTool()
 web_rag_tool = WebsiteSearchTool(
     config={
         "embedding_model": {
-            "provider": "huggingface",  # ✅ supported
+            "provider": "huggingface",  
             "config": {
                 "model": "sentence-transformers/all-MiniLM-L6-v2"
             }
@@ -78,5 +78,5 @@ if __name__ == "__main__":
 )
 
     researcher, swot = agents(llm)
-    print("✅ Agents initialized successfully!")
+    print("Agents initialized successfully!")
 
