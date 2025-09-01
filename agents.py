@@ -72,7 +72,7 @@ if __name__ == "__main__":
     load_dotenv(find_dotenv())
     
     llm = ChatOpenAI(
-    model="gpt-4o-mini",  
+    model="gpt-4o",  
     temperature=0,
     api_key=os.getenv("OPENAI_API_KEY")  
 )
