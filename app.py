@@ -18,13 +18,13 @@ os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 llm = ChatOpenAI(
     model="gpt-4o",  
     temperature=0,
-    api_key=os.getenv("OPENAI_API_KEY")  # Make sure your key is set
+    api_key=os.getenv("OPENAI_API_KEY") 
 )
 
 # Streamlit UI
 st.set_page_config(page_title="Smart Resume Analyzer | AI Agents", layout="wide")
 
-st.title("📄 Smart Resume Analyzer System | AI Agents")
+st.title("📄 Smart Resume Analyzer System ")
 st.markdown("Analyze resumes with multi-agents & semantic matching")
 
 # File uploader
@@ -62,7 +62,7 @@ if uploaded_file and job_desire:
                 parsed_result = json.loads(result)  # if result is JSON
                 st.json(parsed_result)
             except:
-                st.write(result)  # fallback if plain text
+                st.write(result) 
 
 
 
@@ -71,7 +71,7 @@ if uploaded_file and job_desire:
             st.subheader("📊 Resume SWOT Analysis Report")
             try:
                 parsed_result = json.loads(result)  # if result is JSON
-                # Convert JSON nicely into markdown
+            
                 markdown_output = ""
                 for key, value in parsed_result.items():
                     markdown_output += f"### {key}\n"
@@ -82,5 +82,5 @@ if uploaded_file and job_desire:
                         markdown_output += f"{value}\n\n"
                 st.markdown(markdown_output)
             except:
-                st.markdown(result)  # fallback if plain text
+                st.markdown(result) 
 
